@@ -15,10 +15,12 @@
 
     <!-- 轮播图模块 -->
     <Swiper :images="images"></Swiper>
+
+    <!-- 九宫格导航模块 -->
     <div class="zan-panel" style="margin-top: 1px;">
-      <div v-for="icon in icons" :key="icon" class="icon-wrap" @click.stop="iconJump">
-        <div class="zan-icon" :class="'zan-icon-' + icon"  style="color: #ff4343;"></div>
-        <div class="icon-classname">{{icon}}</div>
+      <div v-for="(index, icon) in icons" :key="icon" class="icon-wrap" @click.stop="iconJump">
+        <div class="zan-icon" style="font-size: 65rpx;" :class="'zan-icon-' + icon"  :style="{color: icons[icon]['bk']}"></div>
+        <div class="icon-classname">{{icons[icon]['title']}}</div>
       </div>
     </div>
 
@@ -236,14 +238,14 @@ export default {
           url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1563542297404&di=b67faea6202b39650391b4a66abe8536&imgtype=0&src=http%3A%2F%2Fimg8.zol.com.cn%2Fbbs%2Fupload%2F15082%2F15081006_0800.jpg'
         }
       ],
-      icons: [
-        'new-arrival',
-        'hot-sale',
-        'phone',
-        'completed',
-        'value-card',
-        'certificate'
-      ],
+      icons: {
+        'new-arrival': {title:'浪潮新品',bk:'#EF8B3E'},
+        'hot-sale': {title:'热卖潮流',bk:'#E4463B'},
+        'shop-collect': {title:'浪漫心房',bk:'#8B67E5'},
+        'gift-card-pay': {title:'精品礼房',bk:'#5DC7B0'},
+        'value-card': {title:'优惠酬宾',bk:'#5CA2F2'},
+        'free-postage': {title:'全场包邮',bk:'#EC5B6E'}
+      },
       userInfo: {
         nickName: '卖女孩的小火柴',
         avatarUrl: 'http://mpvue.com/assets/logo.png'

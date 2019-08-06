@@ -13,12 +13,15 @@
     props: {
       images: {
         type: Array
+      },
+      autoplay:{
+        type:Boolean,
+        default:true
       }
     },
     data () {
       return {
         indicatorDots: true,
-        autoplay: true,
         interval: 3000,
         duration: 500
       }

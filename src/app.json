@@ -6,6 +6,7 @@
     "pages/goodsDetail/main",
     "pages/personal/main",
     "pages/userInfo/main",
+    "pages/shop/main",
     "pages/counter/main"
   ],
   "window": {
