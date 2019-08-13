@@ -52,7 +52,7 @@
     </div>
 
     <!-- 卡片选择模块 -->
-    <div class="zan-panel" v-for="(item, index) in shopList" :key="index" @click="cardClick" style="border-top: 3px solid #e6e6e6; margin-top: 0;">
+    <div class="zan-panel" v-for="(item, index) in shopList" @click="cardClick(item)" :key="index" style="border-top: 3px solid #e6e6e6; margin-top: 0;">
       <div class="zan-card">
         <div class="zan-card__thumb">
           <img class="zan-card__img"
@@ -260,8 +260,9 @@ export default {
     iconJump () {
       this.toast.showZanToast('暂时开发中！')
     },
-    cardClick () {
-      this.toast.showZanToast('程序员已被枪毙，暂无人开发！')
+    cardClick (e) {
+      console.log(e.shopName)
+      this.$commonjs.navigateTo("/pages/shop/main?name="+e.shopName)
     },
     fastEntry () {
       this.toast.showZanToast('屏幕点碎也不给你吃！')

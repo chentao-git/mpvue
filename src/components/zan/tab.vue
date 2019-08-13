@@ -5,13 +5,14 @@
         class="zan-tab__bd zan-tab__bd--scroll"
         :class="{ 'zan-tab__bd--fixed' : fixed }"
         scroll-x="true"
-        :style="'height' + mao +  height + 'px auto'"
+        :style="'height' + mao +  height + 'px'"
+        style="border-bottom: 0;overflow-x:hidden;"
       >
         <ZanTabList v-bind="{ list , selectedId, componentId }" @change="_change"/>
       </scroll-view>
     </block>
     <block wx:else>
-      <div class="zan-tab__bd" :class="{ 'zan-tab__bd--fixed' : fixed }">
+      <div class="zan-tab__bd" :class="{ 'zan-tab__bd--fixed' : fixed }" style="border-bottom: 0;">
         <ZanTabList v-bind="{ list, selectedId, componentId }" @change="_change"/>
       </div>
     </block>

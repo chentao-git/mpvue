@@ -15,8 +15,8 @@
         type: Array
       },
       autoplay:{
-        type:Boolean,
-        default:true
+        type: Boolean,
+        default: true
       }
     },
     data () {
